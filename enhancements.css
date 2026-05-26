@@ -1,0 +1,407 @@
+/* =========================================
+   MALUNGELO PROPERTIES — ENHANCEMENTS
+   Add these styles to the bottom of style.css
+   ========================================= */
+
+/* ── HERO ENHANCEMENTS ─────────────────── */
+
+/* Particle canvas layer */
+#hero-particles {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Mouse glow spotlight */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: var(--my, 50%);
+    left: var(--mx, 50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212,164,55,0.12) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    transition: top 0.1s ease, left 0.1s ease;
+}
+
+/* Hero text must sit above particles */
+.hero-text { z-index: 3; }
+.hero-scroll-hint { z-index: 3; }
+
+/* Typewriter cursor */
+.hero-typewriter {
+    display: inline-block;
+    min-width: 280px;
+}
+
+.hero-typewriter::after {
+    content: "|";
+    color: var(--gold);
+    animation: blink 0.75s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+/* ── REVEAL ANIMATION SYSTEM ───────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger delays for children */
+.reveal:nth-child(1) { transition-delay: 0s; }
+.reveal:nth-child(2) { transition-delay: 0.1s; }
+.reveal:nth-child(3) { transition-delay: 0.2s; }
+.reveal:nth-child(4) { transition-delay: 0.3s; }
+
+/* ── STAT BOXES — ANIMATED COUNTER ─────── */
+.stat-box h3 {
+    font-size: 52px;
+    color: var(--gold);
+    margin-bottom: 8px;
+    font-variant-numeric: tabular-nums;
+    transition: transform 0.3s ease;
+}
+
+.stat-box:hover h3 {
+    transform: scale(1.1);
+}
+
+/* Gold shimmer on stat number */
+.stat-box h3 .count-up {
+    background: linear-gradient(90deg, var(--gold), #f5cc6a, var(--gold));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 3s linear infinite;
+}
+
+@keyframes goldShimmer {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* ── PROPERTY CARD TILT ─────────────────── */
+.property-card {
+    transition: transform 0.2s ease, border-color var(--transition), box-shadow var(--transition) !important;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* ── FEATURE BOX — GLOW PULSE ──────────── */
+.feature-box {
+    position: relative;
+}
+
+.feature-box::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--radius);
+    background: transparent;
+    box-shadow: 0 0 0 0 rgba(212,164,55,0);
+    transition: box-shadow 0.4s ease;
+    pointer-events: none;
+}
+
+.feature-box:hover::after {
+    box-shadow: 0 0 30px 4px rgba(212,164,55,0.2);
+}
+
+/* ── SECTION DIVIDER WAVES ─────────────── */
+.wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    margin: 0;
+}
+
+.wave-divider svg {
+    display: block;
+    width: 100%;
+}
+
+/* ── BACKGROUND IMAGE SECTIONS ─────────── */
+/*
+   HOW TO ADD BACKGROUND IMAGES:
+   Replace the placeholder comments below with your image paths.
+   Each section has its own class you can target.
+*/
+
+/* HERO BACKGROUND — change "graduation.png" to your image */
+/* Already set in .hero { background: url("YOUR_IMAGE.jpg") } in main CSS */
+/* To update: find .hero in style.css and change the url() value */
+
+/* MIDPAGE LIFESTYLE BANNER — add your image here */
+.lifestyle-banner {
+    position: relative;
+    height: 420px;
+    background: url("YOUR_LIFESTYLE_IMAGE.jpg") center / cover no-repeat;
+    /* ↑ REPLACE with your image path e.g. url("campus-life.jpg") */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    margin: 60px 0;
+}
+
+.lifestyle-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg,
+        rgba(15,23,36,0.75) 0%,
+        rgba(212,164,55,0.2) 50%,
+        rgba(15,23,36,0.75) 100%);
+}
+
+.lifestyle-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 0 20px;
+}
+
+.lifestyle-banner-content h2 {
+    font-size: clamp(30px, 5vw, 54px);
+    color: var(--white);
+    margin-bottom: 16px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.lifestyle-banner-content p {
+    font-size: 18px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+}
+
+/* Parallax shimmer on lifestyle banner */
+.lifestyle-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(212,164,55,0.06) 50%,
+        transparent 100%);
+    background-size: 200% 100%;
+    animation: bannerShimmer 6s ease-in-out infinite;
+}
+
+@keyframes bannerShimmer {
+    0%, 100% { background-position: -100% 0; }
+    50%       { background-position: 200% 0; }
+}
+
+/* LOCATION BACKGROUND — change "location.jpeg" to your image */
+/* Already set in .location { background: url("location.jpeg") } in main CSS */
+/* To update: find .location in style.css and change the url() value */
+
+/* CONTACT SECTION BACKGROUND — optional */
+.contact {
+    /* Uncomment and add your image to give contact section a background:
+    background: url("YOUR_CONTACT_BG.jpg") center / cover no-repeat;
+    position: relative;
+    */
+}
+
+/* APPLY SECTION BACKGROUND — optional */
+/* .apply-section {
+    background: url("YOUR_APPLY_BG.jpg") center / cover no-repeat;
+} */
+
+/* ── GOLD DIVIDER LINE ───────────────────  */
+.gold-divider {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 20px auto;
+    border-radius: 100px;
+}
+
+/* ── FLOATING BADGE ─────────────────────── */
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212,164,55,0.15);
+    border: 1px solid rgba(212,164,55,0.4);
+    color: var(--gold);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 100px;
+    backdrop-filter: blur(10px);
+    letter-spacing: 1px;
+    animation: fadeInUp 1s ease 0.2s both;
+}
+
+.hero-badge i {
+    font-size: 11px;
+    animation: pulseDot 2s ease infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.3); }
+}
+
+/* ── SCROLL PROGRESS BAR ────────────────── */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), #f5cc6a);
+    width: 0%;
+    z-index: 9999;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 10px rgba(212,164,55,0.6);
+}
+
+/* ── TESTIMONIAL TICKER ──────────────────── */
+.testimonials-section {
+    padding: 70px 0;
+    background: var(--darker);
+    overflow: hidden;
+    border-top: 1px solid rgba(212,164,55,0.1);
+    border-bottom: 1px solid rgba(212,164,55,0.1);
+}
+
+.testimonials-section .section-label,
+.testimonials-section h2 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.testimonials-section h2 {
+    color: var(--gold);
+    font-size: clamp(26px, 4vw, 40px);
+    margin-bottom: 40px;
+}
+
+.ticker-track {
+    display: flex;
+    gap: 24px;
+    animation: ticker 30s linear infinite;
+    width: max-content;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+.testimonial-card {
+    background: var(--dark);
+    border: 1px solid rgba(212,164,55,0.15);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    min-width: 320px;
+    max-width: 320px;
+    text-align: left;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+    border-color: var(--gold);
+}
+
+.testimonial-stars {
+    color: var(--gold);
+    font-size: 14px;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+}
+
+.testimonial-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.testimonial-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    border: 2px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.testimonial-name {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--white);
+}
+
+.testimonial-school {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* ── LIGHT MODE ADDITIONS ───────────────── */
+body.light-mode .testimonials-section,
+body.light-mode .lifestyle-banner::before {
+    /* Keep dark for contrast */
+}
+
+body.light-mode .testimonial-card {
+    background: var(--white);
+    border-color: rgba(31,41,64,0.1);
+}
+
+body.light-mode .testimonial-card p {
+    color: #555;
+}
+
+body.light-mode .testimonial-name {
+    color: var(--dark);
+}
+
+/* ── RESPONSIVE ─────────────────────────── */
+@media (max-width: 768px) {
+    .lifestyle-banner { height: 300px; }
+    .lifestyle-banner-content h2 { font-size: 28px; }
+    .testimonial-card { min-width: 280px; }
+}

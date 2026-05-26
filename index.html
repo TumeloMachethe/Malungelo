@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malungelo Properties | Student Accommodation Gqeberha</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="enhancements.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="scroll-progress"></div>
+
+<!-- NAVBAR -->
+<header id="navbar">
+    <nav>
+        <div class="logo">
+            <img src="logo.jpeg" alt="Malungelo Properties Logo">
+        </div>
+        <div class="menu-container">
+            <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#properties"><i class="fas fa-building"></i> Properties</a></li>
+                <li><a href="#apply"><i class="fas fa-book"></i> How to Apply</a></li>
+                <li>
+                    <a href="https://www.google.com/maps?q=15+Western+Rd,+Gqeberha,+South+Africa" target="_blank" rel="noopener">
+                        <i class="fas fa-map-marker-alt"></i> Location
+                    </a>
+                </li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+        <button id="theme-toggle" aria-label="Toggle light/dark mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <!-- Particle Canvas -->
+    <canvas id="hero-particles"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <!-- Live badge -->
+        <div class="hero-badge">
+            <i class="fas fa-circle"></i> Now Accepting Applications
+        </div>
+        <span class="hero-eyebrow">Premium Student Living · Gqeberha</span>
+        <h1>Welcome to<br>Malungelo Properties</h1>
+        <!-- Typewriter line -->
+        <p><span class="hero-typewriter"></span></p>
+        <a href="#properties" class="hero-btn">Explore Properties <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="hero-scroll-hint">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+    </div>
+</section>
+
+<!-- PROPERTIES -->
+<section class="property-section" id="properties">
+    <div class="section-label">Our Properties</div>
+    <h2>Find Your Perfect Home</h2>
+
+    <div class="property-card reveal">
+        <a href="western-house.html" class="property-img-link">
+            <img src="property1.png" alt="15 Western House">
+            <div class="img-overlay"><span>View Property</span></div>
+        </a>
+        <div class="property-info">
+            <div class="property-tag">NSFAS Accredited</div>
+            <h3>15 Western House</h3>
+            <p>Modern student accommodation with secure living, high-speed Wi-Fi, and excellent access to public transport.</p>
+            <a href="western-house.html" class="btn-primary">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+
+    <div class="property-card reverse reveal">
+        <a href="new-property.html" class="property-img-link">
+            <img src="property2.jpg" alt="Park Place">
+            <div class="img-overlay"><span>View Property</span></div>
+        </a>
+        <div class="property-info">
+            <div class="property-tag">NSFAS Accredited</div>
+            <h3>Park Place</h3>
+            <p>Comfortable and stylish student living close to campus and major shopping centres in the heart of the city.</p>
+            <a href="new-property.html" class="btn-primary">View Details <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</section>
+
+<!-- =============================================
+     LIFESTYLE BANNER — BACKGROUND IMAGE SECTION
+     Replace YOUR_LIFESTYLE_IMAGE.jpg with your photo
+     Recommended: wide landscape photo of students,
+     campus life, Gqeberha beachfront, etc.
+     Size: at least 1400×500px for best quality
+     ============================================= -->
+<section class="lifestyle-banner">
+    <!-- To add your image: open enhancements.css, find .lifestyle-banner
+         and replace url("YOUR_LIFESTYLE_IMAGE.jpg") with your image filename.
+         Example: url("campus-life.jpg") or url("gqeberha-beach.jpg") -->
+    <div class="lifestyle-banner-content">
+        <h2>Built for Student Success</h2>
+        <div class="gold-divider"></div>
+        <p>Every room, every facility, every service — designed around your academic journey and well-being.</p>
+    </div>
+</section>
+
+<!-- SLIDER -->
+<section class="slider" id="slider">
+    <!-- SLIDE 1 — change slide1.jpg to your preferred image -->
+    <div class="slide active">
+        <img src="slide1.jpg" alt="Students collaborating">
+        <div class="slide-text">
+            <h2>Our Strength Lies in Teamwork</h2>
+            <p>We empower each student to grow through collaboration, support, and shared success.</p>
+        </div>
+    </div>
+    <!-- SLIDE 2 — change slide2.jpg to your preferred image -->
+    <div class="slide">
+        <img src="slide2.jpg" alt="Student studying">
+        <div class="slide-text">
+            <h2>Freedom to Create Your Future</h2>
+            <p>We give students the freedom to innovate and build their future with confidence.</p>
+        </div>
+    </div>
+    <!-- SLIDE 3 — change Slide3.jpg to your preferred image (beachfront, campus, etc.) -->
+    <div class="slide">
+        <img src="Slide3.jpg" alt="Gqeberha beachfront">
+        <div class="slide-text">
+            <h2>Nestled in the Heart of Gqeberha</h2>
+            <p>Moments from the beachfront, city life, and breathtaking ocean views.</p>
+        </div>
+    </div>
+    <div class="slider-dots" id="slider-dots"></div>
+</section>
+
+<!-- FUN IMAGE -->
+<section class="fun-image-section">
+    <img src="fun.jpg" alt="Students at Malungelo" class="fun-image">
+</section>
+
+<!-- FEATURES -->
+<div class="features-heading">
+    <div class="section-label">Why Us</div>
+    <h2>Why Choose Malungelo Properties?</h2>
+    <p>We're dedicated to delivering the ultimate living experience for students.</p>
+</div>
+
+<div class="features">
+    <div class="feature-box reveal">
+        <i class="fas fa-graduation-cap feature-icon"></i>
+        <h3 class="feature-title">NSFAS Accredited</h3>
+        <p class="feature-text">Most of our properties are NSFAS accredited for qualifying students.</p>
+    </div>
+    <div class="feature-box reveal">
+        <i class="fas fa-shield-alt feature-icon"></i>
+        <h3 class="feature-title">Secure Housing</h3>
+        <p class="feature-text">24/7 security and controlled access for your complete peace of mind.</p>
+    </div>
+    <div class="feature-box reveal">
+        <i class="fas fa-wifi feature-icon"></i>
+        <h3 class="feature-title">Free Wi-Fi</h3>
+        <p class="feature-text">High-speed internet included across all our properties.</p>
+    </div>
+    <div class="feature-box reveal">
+        <i class="fas fa-bus feature-icon"></i>
+        <h3 class="feature-title">Near Shuttle Stop</h3>
+        <p class="feature-text">Strategically located near major transport routes to all campuses.</p>
+    </div>
+</div>
+
+<!-- TESTIMONIALS TICKER -->
+<section class="testimonials-section">
+    <div class="section-label" style="display:block;text-align:center;margin-bottom:8px;">Student Reviews</div>
+    <h2 style="text-align:center;color:var(--gold);font-size:clamp(26px,4vw,40px);margin-bottom:40px;">What Our Students Say</h2>
+    <div style="overflow:hidden;">
+        <div class="ticker-track">
+            <!-- First set -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Living at Western House changed my life. The environment pushed me to study harder and the staff genuinely care about you."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">K</div>
+                    <div>
+                        <div class="testimonial-name">Kuhle Mthembu</div>
+                        <div class="testimonial-school">Nelson Mandela University</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"The Wi-Fi is fast, the rooms are clean, and the location is perfect. I wouldn't choose anywhere else in Gqeberha."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">T</div>
+                    <div>
+                        <div class="testimonial-name">Thabo Dlamini</div>
+                        <div class="testimonial-school">PE College</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Park Place is the best decision I made as a student. Safe, affordable, and close to everything. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">N</div>
+                    <div>
+                        <div class="testimonial-name">Nandi Zulu</div>
+                        <div class="testimonial-school">RoseBank College</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"The management is so professional and responsive. Any issue gets sorted immediately. I feel truly at home here."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <div class="testimonial-name">Sipho Ndlovu</div>
+                        <div class="testimonial-school">Nelson Mandela University</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"NSFAS accredited and completely stress-free to apply. The process was smooth and the team guided me every step of the way."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">A</div>
+                    <div>
+                        <div class="testimonial-name">Amahle Cele</div>
+                        <div class="testimonial-school">PE College</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Duplicate set for seamless loop -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Living at Western House changed my life. The environment pushed me to study harder and the staff genuinely care about you."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">K</div>
+                    <div>
+                        <div class="testimonial-name">Kuhle Mthembu</div>
+                        <div class="testimonial-school">Nelson Mandela University</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"The Wi-Fi is fast, the rooms are clean, and the location is perfect. I wouldn't choose anywhere else in Gqeberha."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">T</div>
+                    <div>
+                        <div class="testimonial-name">Thabo Dlamini</div>
+                        <div class="testimonial-school">PE College</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"Park Place is the best decision I made as a student. Safe, affordable, and close to everything. Highly recommend!"</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">N</div>
+                    <div>
+                        <div class="testimonial-name">Nandi Zulu</div>
+                        <div class="testimonial-school">RoseBank College</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"The management is so professional and responsive. Any issue gets sorted immediately. I feel truly at home here."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <div class="testimonial-name">Sipho Ndlovu</div>
+                        <div class="testimonial-school">Nelson Mandela University</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p>"NSFAS accredited and completely stress-free to apply. The process was smooth and the team guided me every step of the way."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">A</div>
+                    <div>
+                        <div class="testimonial-name">Amahle Cele</div>
+                        <div class="testimonial-school">PE College</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+    <div class="section-label">Institutions</div>
+    <h2>Students We Accommodate</h2>
+    <div class="gallery-container">
+        <div class="gallery-item reveal">
+            <img src="NMU.jpg" alt="Nelson Mandela University">
+            <h3>Nelson Mandela University</h3>
+        </div>
+        <div class="gallery-item reveal">
+            <img src="PE.jpg" alt="PE College">
+            <h3>PE College</h3>
+        </div>
+        <div class="gallery-item reveal">
+            <img src="IIE.jpg" alt="RoseBank College">
+            <h3>RoseBank College</h3>
+        </div>
+    </div>
+</section>
+
+<!-- HOW TO APPLY -->
+<section class="apply-section" id="apply">
+    <div class="section-label">Applications</div>
+    <h2>How to Apply</h2>
+    <div class="apply-steps">
+        <ol>
+            <li><span>1</span> Click the <strong>"Apply Now"</strong> button below</li>
+            <li><span>2</span> Log in using your NSFAS details</li>
+            <li><span>3</span> Click on <strong>Find Accommodation</strong></li>
+            <li><span>4</span> Use the search bar at the top of the page</li>
+            <li><span>5</span> Search: <strong>Western House</strong> or <strong>Park Place</strong></li>
+            <li><span>6</span> Select the property from the results</li>
+            <li><span>7</span> Click <strong>"Apply"</strong> to submit your application</li>
+        </ol>
+    </div>
+    <a href="https://profprod.nsfas.org.za/login?submit=accept" target="_blank" rel="noopener" class="apply-btn">
+        Apply Now <i class="fas fa-external-link-alt"></i>
+    </a>
+</section>
+
+<!-- LOCATION -->
+<section class="location">
+    <!-- LOCATION BACKGROUND: open style.css, find .location and change the url() value
+         Recommended: an aerial or street photo of Western Road / Gqeberha city centre
+         Current: url("location.jpeg") — replace with your preferred photo -->
+    <div class="location-overlay"></div>
+    <div class="location-content">
+        <h2><i class="fas fa-map-marker-alt"></i> Where We Are Located</h2>
+        <h3>15 Western Road, Port Elizabeth Central, Gqeberha, South Africa</h3>
+        <a href="https://www.google.com/maps?q=15+Western+Rd,+Gqeberha,+South+Africa" target="_blank" rel="noopener" class="btn-primary" style="margin-top:20px; display:inline-block;">
+            Open in Maps <i class="fas fa-external-link-alt"></i>
+        </a>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="section-label">Get in Touch</div>
+    <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+    <div class="contact-items">
+        <a href="mailto:info@malungeloproperties.co.za" class="contact-item reveal">
+            <i class="fas fa-envelope"></i>
+            <span>info@malungeloproperties.co.za</span>
+        </a>
+        <a href="tel:+27657100641" class="contact-item reveal">
+            <i class="fas fa-phone"></i>
+            <span>+27 65 710 0641</span>
+        </a>
+        <a href="https://wa.me/27657100641" target="_blank" rel="noopener" class="contact-item reveal">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp Us</span>
+        </a>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <div class="footer-logo">
+            <img src="logo.jpeg" alt="Malungelo Properties">
+            <span>Malungelo Properties</span>
+        </div>
+        <p class="footer-copy">&copy; 2025 Malungelo Properties. All rights reserved.</p>
+        <div class="footer-socials">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/27657100641" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<a href="https://profprod.nsfas.org.za/login?submit=accept" class="apply-float-btn" target="_blank" rel="noopener" aria-label="Apply Now">
+    Apply Now
+</a>
+<a href="https://wa.me/27657100641" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+// Scroll progress bar
+window.addEventListener("scroll", () => {
+    const bar = document.getElementById("scroll-progress");
+    if (bar) {
+        const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        bar.style.width = scrolled + "%";
+    }
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>
